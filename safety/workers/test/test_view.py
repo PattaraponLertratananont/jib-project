@@ -1,11 +1,12 @@
-from django.test import TestCase
-from ..models import Worker
 import json
 
-class TestWorkerListView(TestCase):
+from rest_framework.test import APITestCase
+
+from ..models import Worker
+
+class TestWorkerListView(APITestCase):
     def test_view_should_be_accessable(self):
         res = self.client.get('/workers/')
-        # print(dir(res))
         self.assertEqual(res.status_code, 200)
 
     def test_view_should_render_list_of_workser_name(self):
@@ -26,11 +27,16 @@ class TestWorkerListView(TestCase):
             secondary_phone='0644444444',
             address='Geeky Base',
         )
+        
         # WHEN
         res = self.client.get('/workers/')
+
         # THEN
         # self.assertContains(res, '<li>Ball</li>')
         # self.assertContains(res, '<li>MuyonZ</li>')
+        
+        # self.maxDiff = None
+        
         expected = [
             {
                 'first_name':'Ball',
@@ -49,4 +55,4 @@ class TestWorkerListView(TestCase):
                 'address':'Geeky Base',
             },
         ]
-        self.assertEqual(res.content.decode('utf-8'), json.dumps(expected))
+        self.assertEqual(res.data , expected)
