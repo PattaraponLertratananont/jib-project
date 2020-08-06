@@ -10,3 +10,7 @@ source ENV/bin/active
 deactivate
 
 <!-- Django -->
+django-admin startproject <name>
+
+<!-- Run server -->
+python manage.py runserver
