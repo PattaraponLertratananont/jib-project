@@ -8,3 +8,5 @@ source ENV/bin/active
 
 <!-- for deactivate -->
 deactivate
+
+<!-- Django -->
