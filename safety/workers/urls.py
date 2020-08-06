@@ -1,7 +1,13 @@
-from django.urls import path
+from django.urls import include,path
 
-from .views import WorkerListView
+from rest_framework.routers import DefaultRouter
+
+from .views import WorkerListView, WorkderModeViewSetView
+
+router = DefaultRouter()
+router.register(r'', WorkderModeViewSetView)
 
 urlpatterns = [
-    path('', WorkerListView.as_view()),
+    path('xxx', WorkerListView.as_view()),
+    path('', include(router.urls)),
 ]
