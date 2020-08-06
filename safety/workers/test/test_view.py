@@ -1,5 +1,6 @@
 from django.test import TestCase
 from ..models import Worker
+import json
 
 class TestWorkerListView(TestCase):
     def test_view_should_be_accessable(self):
@@ -28,5 +29,24 @@ class TestWorkerListView(TestCase):
         # WHEN
         res = self.client.get('/workers/')
         # THEN
-        self.assertContains(res, '<li>Ball</li>')
-        self.assertContains(res, '<li>MuyonZ</li>')
+        # self.assertContains(res, '<li>Ball</li>')
+        # self.assertContains(res, '<li>MuyonZ</li>')
+        expected = [
+            {
+                'first_name':'Ball',
+                'last_name':'Kung',
+                'is_available':True,
+                'primary_phone':'0855555555',
+                'secondary_phone':'0844444444',
+                'address':'Oddsy',
+            },
+            {
+                'first_name':'MuyonZ',
+                'last_name':'Jang',
+                'is_available':True,
+                'primary_phone':'0655555555',
+                'secondary_phone':'0644444444',
+                'address':'Geeky Base',
+            },
+        ]
+        self.assertEqual(res.content.decode('utf-8'), json.dumps(expected))
