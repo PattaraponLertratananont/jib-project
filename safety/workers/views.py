@@ -25,3 +25,7 @@ class WorkerListView(APIView):
 class WorkderModeViewSetView(viewsets.ModelViewSet):
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
+
+    def create(self, request):
+        print(request.data)
+        return Response()
