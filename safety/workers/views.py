@@ -22,7 +22,7 @@ class WorkerListView(APIView):
         return Response(serializer.data)
 
 
-class WorkderModeViewSetView(viewsets.ModelViewSet):
+class WorkerModeViewSetView(viewsets.ModelViewSet):
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
 
