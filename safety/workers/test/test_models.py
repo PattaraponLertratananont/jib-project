@@ -17,6 +17,7 @@ class TestWorker(TestCase):
         secondary_phone = '081-689-778x'
         address = 'Geeke Base All Star'
 
+        # Mock image for TestImage
         image_mock = MagicMock(spec = File)
         image_mock.name = 'ball.png'
         # When
@@ -38,4 +39,4 @@ class TestWorker(TestCase):
         self.assertEqual(worker.address, address)
         self.assertEqual(worker.image_profile, image_mock.name)
 
-        os.remove(image_mock.name)
+        os.remove('media/' + image_mock.name)
