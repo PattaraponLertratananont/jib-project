@@ -38,7 +38,7 @@ class TestWorker(TestCase):
         self.assertEqual(worker.last_name, last_name)
         self.assertTrue(worker.is_available, is_available)
 
-        assert worker.is_available == is_available
+        assert worker.is_available is True
 
         self.assertEqual(worker.primary_phone, primary_phone)
         self.assertEqual(worker.secondary_phone, secondary_phone)
