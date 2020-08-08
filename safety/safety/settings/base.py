@@ -46,6 +46,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'covid19_reports',
     'workers',
+    'certificates',
 ]
 
 # plus list (+) is extend LIST
