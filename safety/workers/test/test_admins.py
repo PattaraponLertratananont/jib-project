@@ -1,5 +1,6 @@
-from django.test import TestCase
 from django.contrib import admin
+from django.test import TestCase
+
 from ..admin import WorkerAdmin
 from ..models import Worker
 

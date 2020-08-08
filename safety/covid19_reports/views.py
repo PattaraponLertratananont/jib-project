@@ -1,7 +1,7 @@
+import requests
+
 from django.http import HttpResponse
 from django.views import View
-
-import requests
 
 
 class Covid19ReportView(View):
