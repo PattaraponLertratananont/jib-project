@@ -18,7 +18,7 @@ class TestWorker(TestCase):
         address = 'Geeke Base All Star'
 
         # Mock image for TestImage
-        image_mock = MagicMock(spec = File)
+        image_mock = MagicMock(spec=File)
         image_mock.name = 'ball.png'
         # When
         worker = Worker.objects.create(
