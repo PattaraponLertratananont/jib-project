@@ -6,7 +6,7 @@ from ..models import Certificate
 class TestCertificate(TestCase):
     def test_certificate_should_have_defined_field(self):
         # Given
-        name = 'Django Certificat by Odds'
+        name = 'Django Certificate by Odds'
         issued_by = 'ProoF'
 
         # When
