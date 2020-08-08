@@ -1,10 +1,14 @@
-import json
+# import json
 
-from rest_framework import serializers, viewsets
+from rest_framework import (
+    serializers,
+    # viewsets
+    )
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Worker
+
 
 class WorkerSerializer(serializers.Serializer):
     first_name = serializers.CharField()
@@ -13,6 +17,7 @@ class WorkerSerializer(serializers.Serializer):
     primary_phone = serializers.CharField()
     secondary_phone = serializers.CharField()
     address = serializers.CharField()
+
 
 # class-base view
 class WorkerListView(APIView):

@@ -3,6 +3,7 @@ from django.contrib import admin
 from ..admin import WorkerAdmin
 from ..models import Worker
 
+
 class TestWorkerAdmin(TestCase):
     def test_admin_should_be_registered(self):
         self.assertTrue(isinstance(admin.site._registry[Worker], WorkerAdmin))
