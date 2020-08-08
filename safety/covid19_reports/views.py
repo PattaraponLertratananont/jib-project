@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.views import View
 
-# Create your views here.
+import requests
+
+class Covid19ReportView(View):
+    def get(self, request):
+        requests.get('https://covid19.th-stat.com/api/open/today')
+        return HttpResponse()
