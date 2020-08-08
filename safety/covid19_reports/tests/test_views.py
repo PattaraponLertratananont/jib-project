@@ -13,8 +13,7 @@ class TestCovid19ReportView(TestCase):
     @patch('covid19_reports.views.requests.get')
     def test_view_should_call_covid19_api(self, mock):
         self.client.get('/covid19-reports/')
-        mock.assert_called_once_with
-        ('https://covid19.th-stat.com/api/open/today')
+        mock.assert_called_once_with('https://covid19.th-stat.com/api/open/today')
 
     @patch('covid19_reports.views.requests.get')
     def test_view_should_render_number_of_confirmed(self, mock):
