@@ -6,7 +6,7 @@ from ..models import Worker
 class TestWorkerListView(APITestCase):
     def test_view_should_be_accessable(self):
         res = self.client.get('/workers/')
-        self.assertEqual(res.status_code, 200)
+        assert res.status_code == 200
 
     def test_view_should_render_list_of_workser_name(self):
         # GIVEN
@@ -50,4 +50,4 @@ class TestWorkerListView(APITestCase):
                 'address': 'Geeky Base',
             },
         ]
-        self.assertEqual(res.data, expected)
+        assert res.data == expected

@@ -8,4 +8,5 @@ class CertificateAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'issued_by',
+        'worker',
     )

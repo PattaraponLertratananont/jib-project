@@ -42,3 +42,21 @@ class TestWorker(TestCase):
         self.assertEqual(worker.image_profile, image_mock.name)
 
         os.remove('media/' + image_mock.name)
+
+    def test_model_should_have_friendly_name(self):
+        first_name = 'Ball'
+        last_name = 'Kung'
+        is_available = True
+        primary_phone = '0855555555'
+        secondary_phone = '0844444444'
+        address = 'Geeke Base All Star'
+
+        worker = Worker.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            is_available=is_available,
+            primary_phone=primary_phone,
+            secondary_phone=secondary_phone,
+            address=address,
+        )
+        assert worker.__str__() == f'{first_name} {last_name}'

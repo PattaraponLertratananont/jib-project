@@ -13,5 +13,6 @@ class TestWorkerAdmin(TestCase):
         expected = (
             'name',
             'issued_by',
+            'worker',
         )
         assert CertificateAdmin.list_display == expected
